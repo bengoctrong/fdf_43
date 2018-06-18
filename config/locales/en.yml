@@ -31,3 +31,29 @@
 
 en:
   hello: "Hello world"
+  base_title: "Framgia Foods & Drinks"
+  toggle_navigation: "Toggle navigation"
+  logo_link: "Foods & Drinks"
+  home_link: "Home"
+  help_link: "Help"
+  about_link: "About"
+  contact_link: "Contact"
+  account_link: "Account"
+  profile_link: "Profile"
+  setting_link: "Setting"
+  logout_link: "Log out"
+  static_pages:
+    home:
+      title: "Home"
+      header1: "Framgia Foods and Drinks"
+      header2: "Fresh Taste at a Great Price"
+      signup_link: "Sign up now!"
+    help:
+      title: "Help"
+      header1: "Help Page"
+    contact:
+      title: "Contact"
+      header1: "Contact Page"
+    about:
+      title: "About"
+      header1: "About Page"
