@@ -57,3 +57,19 @@ en:
     about:
       title: "About"
       header1: "About Page"
+  users:
+    form:
+      name: "Name"
+      email: "Email"
+      password: "Password"
+      confirm: "Confirmation"
+    new:
+      title: "Sign Up"
+      hello: "Sign up"
+      button_text: "Create my account"
+    create:
+      success: "Welcome to the Sample App!"
+  shared:
+    error_messages:
+      message: "The form contains"
+      error: "error"
