@@ -1,8 +1,11 @@
-<footer class="footer">
-  <nav>
+<footer class="navbar navbar-fixed-bottom" role="navigation">
+  <div class="container">
+    <%= t "information" %>
     <ul>
       <li><%= link_to t("about_link"), about_path %></li>
       <li><%= link_to t("contact_link"), contact_path %></li>
     </ul>
-  </nav>
+    <li><%= link_to t("fb_link1"), "https://www.facebook.com/song.tranvan.5" %></li>
+    <li><%= link_to t("fb_link2"), "https://www.facebook.com/nt.bees" %></li>
+  </div>
 </footer>

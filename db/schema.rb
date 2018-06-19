@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619062052) do
+ActiveRecord::Schema.define(version: 20180619081644) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180619062052) do
     t.string "description"
     t.integer "price"
     t.integer "quantity"
-    t.string "type"
+    t.string "product_type"
     t.float "avg_rate", limit: 24
     t.integer "count_rate"
     t.bigint "category_id"

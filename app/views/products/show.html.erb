@@ -1,0 +1,14 @@
+<% provide :title, @product.name %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="product_info">
+      <h1>
+        <%= @product.name %>
+        <ul>
+          <li><%= @product.description %></li>
+          <li><%= t("product_price", price: @product.price) %></li>
+        </ul>
+      </h1>
+    </section>
+  </aside>
+</div>

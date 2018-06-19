@@ -1,0 +1,29 @@
+<% provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @product do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :name, t(".name_lb") %>
+      <%= f.text_field :name, class: "form-control" %>
+
+      <%= f.label :description, t(".description_lb") %>
+      <%= f.text_field :description, class: "form-control" %>
+
+      <%= f.label :price, t(".price_lb") %>
+      <%= f.number_field :price, class: "form-control" %>
+
+      <%= f.label :quantity, t(".quantity_lb") %>
+      <%= f.number_field :quantity, class: "form-control" %>
+
+      <%= f.label :product_type, t(".type_lb") %>
+      <%= f.text_field :product_type, class: "form-control" %>
+
+      <%= f.label :category_id, t(".category_lb") %>
+      <%= f.number_field :category_id, class: "form-control" %>
+
+      <%= f.submit t(".submit"), class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
