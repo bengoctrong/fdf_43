@@ -40,4 +40,9 @@ module SessionsHelper
     cookies.delete :user_id
     cookies.delete :remember_token
   end
+
+  def can_delete?
+    return false unless logged_in?
+    current_user.admin?
+  end
 end

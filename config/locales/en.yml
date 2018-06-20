@@ -46,6 +46,9 @@ en:
   profile_link: "Profile"
   setting_link: "Setting"
   logout_link: "Log out"
+  login: "Plese login"
+  login_admin: "Plese login as admin"
+  you_sure: "Are you sure?"
   static_pages:
     home:
       title: "Home"
@@ -93,19 +96,26 @@ en:
     error_messages:
       message: "The form contains"
       error: "error"
+  admin:
+    products:
+      create:
+        success: "Product has been created!"
+      new:
+        title: "New Product"
+        header: "New Product"
+        name_lb: "Product name"
+        description_lb: "Descripton"
+        price_lb: "Price"
+        quantity_lb: "Quantity"
+        type_lb: "Product type"
+        category_lb: "Category"
+        submit: "Create product"
+      destroy:
+        success: "Product has been destroyed"
+        warning: "Failed to destroy this product"
   products:
-    create_success: "Product has been created!"
     product_not_found: "Product not found!"
-    new:
-      title: "New Product"
-      header: "New Product"
-      name_lb: "Product name"
-      description_lb: "Descripton"
-      price_lb: "Price"
-      quantity_lb: "Quantity"
-      type_lb: "Product type"
-      category_lb: "Category"
-      submit: "Create product"
+    delete: "Delete"
   product_price: "$%{price}"
   sessions:
     new:
