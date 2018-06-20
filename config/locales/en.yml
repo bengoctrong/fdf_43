@@ -91,3 +91,18 @@ en:
       category_lb: "Category"
       submit: "Create product"
   product_price: "$%{price}"
+  sessions:
+    new:
+      title: "Log in"
+      email: "Email"
+      password: "Password"
+      login: "Log in"
+      signup: "Sign up now!"
+      new_user: "New user?"
+      remember: "Remember me"
+      remember_title: "Remember me on this computer"
+      forgot_password: "(forgot password)"
+    create:
+      danger: "Invalid email/password combination"
+      message1: "Account not activated. "
+      message2: "Check your email for the activation link."
