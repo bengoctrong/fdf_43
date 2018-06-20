@@ -62,9 +62,12 @@ en:
       title: "About"
       header1: "About Page"
   users:
+    user_not_found: "User not found!"
+    user_update_success: "User profile has been updated!"
     form:
       name: "Name"
       email: "Email"
+      address: "Address"
       password: "Password"
       confirm: "Confirmation"
     new:
@@ -73,6 +76,19 @@ en:
       button_text: "Create my account"
     create:
       success: "Welcome to the Sample App!"
+    show:
+      name_lb: "Name"
+      email_lb: "Email"
+      address_lb: "Address"
+      user_picture: "User Picture"
+      edit_user_txt: "Edit user"
+      delete_user_txt: "Delete user"
+      alert:
+        error: "Can not load script"
+    edit:
+      title: "Edit User"
+      header: "Update your profile"
+      button_text: "Update profile"
   shared:
     error_messages:
       message: "The form contains"
