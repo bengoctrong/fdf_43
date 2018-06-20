@@ -19,7 +19,7 @@ $yellow-darker: #856900;
 body {
   padding-top: 60px;
   background-color: $gray-yellow;
-  font-size: 20px;
+  font-size: 14px;
 }
 
 body.home {
@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 40px;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -87,7 +87,7 @@ h2.home {
 }
 
 p {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 25px;
 }
 
@@ -124,7 +124,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 14px;
   background-color: $black-gray;
   color: $yellow-darker;
   a {
@@ -134,7 +134,7 @@ footer {
     }
   }
   ul {
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     float: right;
     list-style: none;
@@ -188,7 +188,7 @@ input {
 .session_remember_me {
   width: auto;
   margin-left: 0 !important;
-  margin-top: 8px !important;
+  margin-top: 4px !important;
 }
 
 /* sidebar */
@@ -216,5 +216,65 @@ aside {
       margin-top: 0px;
     }
   }
+}
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-user {
+    margin: 13px 0;
+    padding: 5px;
+    height: 100%;
+}
+
+.dropdown-user:hover {
+    cursor: pointer;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
+
+.table-user-information > tbody > tr > td {
+    border-top: 0;
+}
+.toppad {
+  margin-top: 90px;
+  margin-left: 180px;
+}
+
+.img-circle {
+  width: 135px;
+  height: 103px;
+  margin-top: 15px;
+}
+
+h3.text-align-center {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.row {
+  margin-top: -16px;
+}
+
+.panel.panel-info {
+  width: 800px;
+  height: 235px;
+}
+
+.panel-footer {
+  height: 50px;
 }
 
