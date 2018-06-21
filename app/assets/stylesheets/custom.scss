@@ -6,8 +6,8 @@ $gray-medium-light: #eaeaea;
 $gray-border-light: #e8e8e8;
 $gray-border: #bbb;
 $gray-yellow: #fcffe7;
-$black-gray: #564e53;
-$yellow-darker: #856900;
+$black-gray: #191919;
+$white-gray: #9d9d9d;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -126,11 +126,11 @@ footer {
   align-items: center;
   font-size: 14px;
   background-color: $black-gray;
-  color: $yellow-darker;
+  color: $white-gray;
   a {
-    color: $yellow-darker;
+    color: $white-gray;
     &:hover {
-      color: $gray-darker;
+      color: $white-gray;
     }
   }
   ul {
