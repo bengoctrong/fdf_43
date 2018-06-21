@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180620075919) do
+ActiveRecord::Schema.define(version: 20180621031921) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(version: 20180620075919) do
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.string "activation_digest"
+    t.integer "status", default: 0
+    t.datetime "activated_at"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
