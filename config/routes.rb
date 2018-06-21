@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
 
-  resources :products
+  resources :products, only: %i(index show)
+  namespace :admin do
+    resources :products, except: %i(index show)
+  end
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

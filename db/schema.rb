@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180619093737) do
+ActiveRecord::Schema.define(version: 20180620075919) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
@@ -44,14 +44,15 @@ ActiveRecord::Schema.define(version: 20180619093737) do
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
     t.string "description"
-    t.integer "price"
+    t.float "price", limit: 24
     t.integer "quantity"
-    t.string "product_type"
+    t.integer "product_type", default: 0
     t.float "avg_rate", limit: 24
     t.integer "count_rate"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "is_delete", default: 0
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
@@ -82,7 +83,7 @@ ActiveRecord::Schema.define(version: 20180619093737) do
     t.string "name"
     t.string "email"
     t.string "address"
-    t.string "role", default: "user"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
