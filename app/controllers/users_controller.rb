@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :load_user, except: %i(new create)
+  before_action :load_user, :logged_in_user, except: %i(index new create)
   before_action :correct_user, only: %i(edit update)
+
+  def index
+    @users = User.load_user.paginate page: params[:page], per_page: Settings.user.per_page
+  end
 
   def new
     @user = User.new
@@ -35,13 +39,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :name, :email, :address, :password,
       :password_confirmation
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash[:danger] = t "users.user_not_found"
-    redirect_to root_path
   end
 
   def correct_user

@@ -15,6 +15,10 @@ module SessionsHelper
     user == current_user
   end
 
+  def not_current_user? user
+    user != current_user
+  end
+
   def redirect_back_or default
     redirect_to session[:forwarding_url] || default
     session.delete :forwarding_url
@@ -46,8 +50,8 @@ module SessionsHelper
     cookies.delete :remember_token
   end
 
-  def can_delete?
+  def can_delete? user
     return false unless logged_in?
-    current_user.admin?
+    current_user.admin? && not_current_user?(user)
   end
 end

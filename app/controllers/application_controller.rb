@@ -25,4 +25,11 @@ class ApplicationController < ActionController::Base
     flash[:danger] = t "products.product_not_found"
     redirect_to root_path
   end
+
+  def load_user
+    @user = User.load_user.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "users.user_not_found"
+    redirect_to root_path
+  end
 end

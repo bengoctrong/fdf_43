@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   enum role: {user: 0, admin: 1}
-  enum status: {non_active: 0, activated: 1}
+  enum status: {non_active: 0, activated: 1, deleted: 2}
 
   attr_accessor :remember_token, :activation_token, :reset_token
 
@@ -18,6 +18,7 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
 
+  scope :load_user, ->{where.not(status: :deleted)}
   has_secure_password
 
   def self.digest string
@@ -45,7 +46,7 @@ class User < ApplicationRecord
   end
 
   def activate
-    update_attributes is_activate: 1, activated_at: Time.zone.now
+    update_attributes status: :activated, activated_at: Time.zone.now
   end
 
   def send_activation_email
