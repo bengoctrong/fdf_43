@@ -15,10 +15,6 @@ module SessionsHelper
     user == current_user
   end
 
-  def not_current_user? user
-    user != current_user
-  end
-
   def redirect_back_or default
     redirect_to session[:forwarding_url] || default
     session.delete :forwarding_url
@@ -52,6 +48,6 @@ module SessionsHelper
 
   def can_delete? user
     return false unless logged_in?
-    current_user.admin? && not_current_user?(user)
+    current_user.admin? && !current_user?(user)
   end
 end

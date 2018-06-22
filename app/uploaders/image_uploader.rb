@@ -1,0 +1,17 @@
+class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
+  storage :file
+  process resize_to_fit: [Settings.product.image.size, Settings.product.image.size]
+  version :thumb do
+    process resize_to_fill: [Settings.product.image.thumb_size, Settings.product.image.thumb_size]
+  end
+
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def extension_whitelist
+    %w(jpg jpeg gif png)
+  end
+end

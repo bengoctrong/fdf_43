@@ -23,6 +23,8 @@
       <%= f.label :category_id, t(".category_lb") %>
       <%= f.number_field :category_id, class: "form-control" %>
 
+      <%= f.file_field :images, multiple: true %>
+
       <%= f.submit t(".submit"), class: "btn btn-success" %>
     <% end %>
   </div>

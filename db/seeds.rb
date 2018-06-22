@@ -24,3 +24,5 @@ User.create!(name: "Trong",
   status: "activated",
   activated_at: Time.zone.now)
 end
+
+Category.create!(name: "VIP")

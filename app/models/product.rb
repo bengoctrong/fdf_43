@@ -13,4 +13,6 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: {only_float: true}
   validates :quantity, presence: true, numericality: {only_integer: true}
   validates :product_type, presence: true
+
+  mount_uploaders :images, ImageUploader
 end
