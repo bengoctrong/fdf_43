@@ -5,6 +5,7 @@ user:
     maximum: 50
   email:
     maximum: 255
+  per_page: 5
 password:
   minimum: 6
 

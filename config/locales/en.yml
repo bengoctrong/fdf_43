@@ -49,6 +49,8 @@ en:
   login: "Plese login"
   login_admin: "Plese login as admin"
   you_sure: "Are you sure?"
+  edit: "Edit"
+  delete: "Delete"
   static_pages:
     home:
       title: "Home"
@@ -68,6 +70,11 @@ en:
     activate_email: "Please check your email to activate your account!"
     user_not_found: "User not found!"
     user_update_success: "User profile has been updated!"
+    index:
+      new: "New User"
+      id: "ID"
+      name: "Name"
+      email: "Email"
     form:
       name: "Name"
       email: "Email"
@@ -114,9 +121,12 @@ en:
       destroy:
         success: "Product has been destroyed"
         warning: "Failed to destroy this product"
+    users:
+      destroy:
+        success: "User has been destroyed"
+        warning: "Failed to destroy this user"
   products:
     product_not_found: "Product not found!"
-    delete: "Delete"
   product_price: "$%{price}"
   sessions:
     new:

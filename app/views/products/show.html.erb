@@ -9,7 +9,7 @@
           <li><%= t("product_price", price: @product.price) %></li>
           <% if can_delete? %>
             <li>
-              <%= link_to t("products.delete"), admin_product_path(@product), method: :delete, data: { confirm: t("you_sure") } %>
+              <%= link_to t("delete"), admin_product_path(@product), method: :delete, data: { confirm: t("you_sure") } %>
             </li>
           <% end %>
         </ul>

@@ -19,7 +19,7 @@ module Admin
 
     def destroy
       status = @product.deleted! ? :success : :warning
-      flash[status] = t ".#{status}"
+      flash[status] = t ".destroy.#{status}"
       redirect_to root_path
     end
   end
