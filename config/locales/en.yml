@@ -46,8 +46,8 @@ en:
   profile_link: "Profile"
   setting_link: "Setting"
   logout_link: "Log out"
-  login: "Plese login"
-  login_admin: "Plese login as admin"
+  login: "Please login!"
+  login_admin: "Please login as adminstrator!"
   you_sure: "Are you sure?"
   edit: "Edit"
   delete: "Delete"
@@ -127,6 +127,13 @@ en:
         warning: "Failed to destroy this user"
   products:
     product_not_found: "Product not found!"
+    index:
+      title: "All Products"
+      header: "All Products"
+      product_id_text: "Product ID"
+      product_name_text: "Product Name"
+      product_unit_price_text: "Unit Price"
+      add_to_cart_button: "Add to cart"
   product_price: "$%{price}"
   sessions:
     new:
@@ -181,3 +188,30 @@ en:
     update:
       empty_msg: "can't be empty"
       success_msg: "Password has been reset."
+  order_products:
+    add_product_success: "Product added to your cart!"
+    add_product_fail: "Can not add product!"
+  orders:
+    not_found_order_msg: "Order not found!"
+    index:
+      title: "All Carts"
+      header: "All Carts"
+      user_name_text: "Customer"
+      user_email_text: "Email"
+      user_address_text: "Address"
+      details_link: "Details"
+    show:
+      title: "Your Cart"
+      header: "Your Cart"
+      product_id_text: "Product ID"
+      product_name_text: "Product Name"
+      product_unit_price_text: "Unit Price"
+      product_quantity_text: "Quantity"
+  carts:
+    empty_cart: "There are no product in your cart!"
+    index:
+      title: "Your Cart"
+      header: "Your Cart"
+      product_name_text: "Product Name"
+      quantity_text: "Quantity"
+

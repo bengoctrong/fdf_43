@@ -1,4 +1,6 @@
 remember_me: "1"
+per_page_value: 10
+increase_quantity: 1
 time_expire: 2
 user:
   name:

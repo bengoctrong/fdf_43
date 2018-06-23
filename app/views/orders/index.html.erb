@@ -1,0 +1,18 @@
+<%= provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+<div class="well">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t ".user_name_text" %></th>
+        <th><%= t ".user_email_text" %></th>
+        <th><%= t ".user_address_text" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @orders %>
+    </tbody>
+  </table>
+  <%= will_paginate @orders %>
+</div>

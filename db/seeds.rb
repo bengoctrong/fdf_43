@@ -13,6 +13,14 @@ User.create!(name: "Trong",
   role: "admin",
   activated_at: Time.zone.now)
 
+User.create!(name: "Song",
+  email: "songtranvan2511@gmail.com",
+  password: "123456",
+  password_confirmation: "123456",
+  status: "activated",
+  role: "admin",
+  activated_at: Time.zone.now)
+
 21.times do |n|
   name = Faker::Name.name
   email = "user#{n+1}@gmail.com"
@@ -25,4 +33,19 @@ User.create!(name: "Trong",
   activated_at: Time.zone.now)
 end
 
-Category.create!(name: "VIP")
+3.times do |n|
+  Category.create!(name: "cate#{n}")
+end
+
+10.times do |n|
+  name = "Product#{n+1}"
+  description = "AAA#{n}"
+  price = 10
+  quantity = 10
+  Product.create!(name: name,
+    description: description,
+    price: price,
+    quantity: quantity,
+    category_id: 1)
+end
+

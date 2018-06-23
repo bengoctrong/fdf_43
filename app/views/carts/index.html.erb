@@ -1,0 +1,21 @@
+<%= provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+
+<div class="well">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t ".product_name_text" %></th>
+        <th><%= t ".quantity_text" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products_of_current_cart.each do |product| %>
+        <tr>
+          <td><%= link_to product.name, product_path(product) %></td>
+          <td><%= product.quantity_in_cart %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

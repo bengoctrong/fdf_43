@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20180622074730) do
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "address_ship"
-    t.string "status", default: "new"
+    t.integer "status", default: 0
     t.integer "total"
     t.text "note"
     t.bigint "user_id"
