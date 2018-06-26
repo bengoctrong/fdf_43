@@ -47,8 +47,7 @@
           <div>
             <% @product.images.each_with_index do |image, index| %>
               <%= image_tag image.url.to_s %>
-              <%= link_to t("delete"), product_image_path(@product, index), method: :delete,
-                data: {confirm: t("you_sure")} %>
+              <%= link_to t("delete"), product_image_path(@product, index), method: :delete, data: {confirm: t("you_sure")} %>
             <% end %>
           </div>
           <div>

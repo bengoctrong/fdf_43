@@ -5,24 +5,26 @@
     <%= form_for @product, url: admin_products_path do |f| %>
       <%= render "shared/error_messages", object: f.object %>
 
-      <%= f.label :name, t(".name_lb") %>
+      <%= f.label :name, t("admin.products.name_lb") %>
       <%= f.text_field :name, class: "form-control" %>
 
-      <%= f.label :description, t(".description_lb") %>
+      <%= f.label :description, t("admin.products.description_lb") %>
       <%= f.text_field :description, class: "form-control" %>
 
-      <%= f.label :price, t(".price_lb") %>
+      <%= f.label :price, t("admin.products.price_lb") %>
       <%= f.number_field :price, class: "form-control" %>
 
-      <%= f.label :quantity, t(".quantity_lb") %>
+      <%= f.label :quantity, t("admin.products.quantity_lb") %>
       <%= f.number_field :quantity, class: "form-control" %>
 
-      <%= f.label :product_type, t(".type_lb") %>
-      <%= f.text_field :product_type, class: "form-control" %>
+      <%= f.label :product_type, t("admin.products.type_lb") %>
+      <%= f.select :category_id, "<option>food</option><option>drink</option>".html_safe %>
 
-      <%= f.label :category_id, t(".category_lb") %>
-      <%= f.number_field :category_id, class: "form-control" %>
+      <%= f.label :category_id, t("admin.products.category_lb") %>
+      <%= f.select :category_id,
+        options_for_select(@categories.collect{|u| [u.name, u.id]}), {}, {size: Settings.category.list_size} %>
 
+      <%= f.label :images, t("admin.products.image_lb") %>
       <%= f.file_field :images, multiple: true %>
 
       <%= f.submit t(".submit"), class: "btn btn-success" %>

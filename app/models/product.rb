@@ -19,5 +19,7 @@ class Product < ApplicationRecord
   validates :product_type, presence: true
 
   scope :actived, ->{where(is_delete: :exist)}
+  scope :search_by_name, ->(name){where("name like ?", "#{name}%")}
+  scope :search_by_category, ->(category_id){where(category_id: category_id)}
   mount_uploaders :images, ImageUploader
 end
