@@ -22,38 +22,13 @@
         </div>
         <div class="details col-md-6">
           <h3 class="product-title"><%= @product.name %></h3>
-          <div class="rating">
-            <div class="stars">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-            </div>
-            <span class="review-no"></span>
-          </div>
-          <h5 class="product-description"><%= @product.description %></h5>
-          <h4 class="price"><%= t ".price_text" %>
-          <span>
-            <%= number_to_currency @product.price %>
-          </span></h4>
-          <h4 class="sizes">
-            <%= t ".inventory_text" %>
-            <%= @product.inventory %>
-          </h4>
-          <p>
-          <%= form_tag carts_path(product_id: @product.id), method: :post do %>
-            <div class="pull-left">
-              <h4 class="colors"><%= t ".quantity_text" %></h4>
-              <%= number_field_tag :quantity, Settings.minimum_value,
-                min: Settings.minimum_value, class: "form-control" %>
-              <%= submit_tag t("add_to_cart"), class: "add-to-cart btn btn-default" %>
-            </div>
-          <% end %>
-          </p>
-          <div class="action">
-            <%= link_to t(".edit_link"), edit_admin_product_path(@product),
-              class: "edit-product btn btn-default" if can_edit? %>
+          <p class="product-description"><%= @product.description %></p>
+          <h4 class="price"><%= t ".inventory" %> <span><%= @product.quantity %></span></h4>
+          <h4 class="price"><%= t ".price" %> <span><%= number_to_currency @product.price %></span></h4>
+          <div class="pull-left">
+            <input name="quantity" type="number" class="form-control text-center" value="1" min="1">
+            <%= link_to t("add_to_cart"), "#", class: "add-to-cart btn btn-default" %>
+            <span> <%= link_to t("edit"), edit_admin_product_path(@product), class: "edit-product btn btn-default" if can_edit? %></span>
           </div>
         </div>
       </div>

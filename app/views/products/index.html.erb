@@ -1,8 +1,20 @@
 <%= provide :title, t(".title") %>
 <h1><%= t ".header" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel">
+      <%= form_tag products_path, method: :get, remote: true, class:"panel-body form-group" do %>
+        <%= select_tag :types, options_for_select(@products.product_types), {include_blank: t(".all"), class: "form-input"} %>
+        <%= select_tag :category_id, options_for_select(@categories.collect{|u| [u.name, u.id]}), {multiple: true, include_blank: t(".all"), size: 3, class: "form-input"} %>
+        <%= select_tag :order_by, options_for_select([[t(".name"), :name],[t(".created"), :created_at],[t(".price"), :price]]), {class: "form-input"} %>
 
+        <%= submit_tag t(".filter"), class:"btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <div class="container">
-  <div class="row">
+  <div class="row products">
     <%= render @products %>
   </div>
 </div>

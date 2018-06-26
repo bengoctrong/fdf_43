@@ -21,8 +21,10 @@ class Product < ApplicationRecord
   validates :product_type, presence: true
 
   scope :actived, ->{where(is_delete: :exist)}
-  scope :search_by_name, ->(name){where("name like ?", "#{name}%")}
-  scope :search_by_category, ->(category_id){where(category_id: category_id)}
+  scope :search_by_name, ->(name){where("name like ?", "%#{name}%")}
+  scope :category_id, ->(category_id){where(category_id: category_id) if category_id.first.present?}
+  scope :types, ->(product_type){where(product_type: product_type) if product_type.first.present?}
+  scope :order_by, ->(column){order("#{column} asc")}
   mount_uploaders :images, ImageUploader
 
   def change_in_cart quantity
