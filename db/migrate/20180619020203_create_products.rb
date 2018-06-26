@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :description
       t.integer :prince
-      t.integer :quantity
+      t.integer :inventory
       t.string :type
       t.float :avg_rate
       t.integer :count_rate
