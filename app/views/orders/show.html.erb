@@ -1,0 +1,25 @@
+<%= provide :title, t(".title") %>
+<h2><%= t ".title" %></h2>
+<div class="well">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t "orders.show.product_id_text" %></th>
+        <th><%= t "orders.show.product_name_text" %></th>
+        <th><%= t "orders.show.product_unit_price_text" %></th>
+        <th><%= t "orders.show.product_quantity_text" %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.order_products.each do |order_product| %>
+        <tr>
+          <td><%= order_product.id %></td>
+          <td><%= link_to order_product.name, product_path %></td>
+          <td><%= t("product_price", price: order_product.price) %></td>
+          <td><%= order_product.quantity %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

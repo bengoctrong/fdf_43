@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
   resources :products, only: %i(index show)
+  resources :order_products
+  resources :orders
+  resources :carts, only: %i(index create)
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

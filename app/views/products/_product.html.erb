@@ -1,0 +1,10 @@
+<tr>
+  <td><%= product.id %></td>
+  <td><%= link_to product.name, product %></td>
+  <td><%= t("product_price", price: product.price) %></td>
+  <td></td>
+  <td></td>
+  <td></td>
+  <td><%= button_to t("products.index.add_to_cart_button"),
+    carts_path(product_id: product.id), class: "btn btn-warning" %></td>
+</tr>
