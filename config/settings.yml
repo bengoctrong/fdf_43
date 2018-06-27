@@ -1,6 +1,11 @@
 remember_me: "1"
+minimum_value: 1
 per_page_value: 10
 increase_quantity: 1
+minimum_inventory: 0
+zero_value: 0
+cart_value: 0
+total: 0
 time_expire: 2
 user:
   name:

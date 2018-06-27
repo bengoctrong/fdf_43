@@ -6,16 +6,40 @@
     <thead>
       <tr>
         <th><%= t ".product_name_text" %></th>
-        <th><%= t ".quantity_text" %></th>
+        <th class="text-center"><%= t ".quantity_text" %></th>
+        <th class="text-center"><%= t ".unit_price_text" %></th>
+        <th class="text-center"><%= t ".total_text" %></th>
+        <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
-      <% @products_of_current_cart.each do |product| %>
-        <tr>
-          <td><%= link_to product.name, product_path(product) %></td>
-          <td><%= product.quantity_in_cart %></td>
-        </tr>
-      <% end %>
+      <%= render partial: "item", collection: @products_of_current_cart %>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><h3><%= t ".total_text" %></h3></td>
+        <td class="text-right"><h3><strong><%= number_to_currency @total %></strong></h3></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+        <%= link_to products_path, type: "button", class: "btn btn-info" do %>
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          <%= t ".continue_shopping_txt" %>
+        <% end %>
+        </td>
+        <td>
+        <%= link_to products_path, type: "button", class: "btn btn-success" do %>
+          <%= t ".checkout_txt" %>
+          <span class="glyphicon glyphicon-play"></span>
+        <% end %>
+      </tr>
     </tbody>
   </table>
 </div>

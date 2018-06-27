@@ -43,6 +43,11 @@
         <% else %>
           <li><%= link_to t(".login"), login_path %></li>
         <% end %>
+        <li>
+          <%= link_to carts_path, type: "button", class: "btn btn-default btn-color" do %>
+            <%= render "layouts/cart_icon" %>
+          <% end %>
+        </li>
       </ul>
     </nav>
   </div>

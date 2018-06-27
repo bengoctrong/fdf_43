@@ -140,6 +140,7 @@ en:
         success: "User has been destroyed"
         warning: "Failed to destroy this user"
   products:
+    alt-text: Product Image"
     product_not_found: "Product not found!"
     index:
       title: "All Products"
@@ -149,8 +150,10 @@ en:
       product_unit_price_text: "Unit Price"
       add_to_cart_button: "Add to cart"
     show:
-      inventory: "Inventory:"
-      price: "Current price:"
+      inventory_text: "inventory: "
+      price_text: "current price: "
+      quantity_text: "quantity: "
+      edit_link: "Edit"
   product_price: "$%{price}"
   sessions:
     new:
@@ -225,12 +228,26 @@ en:
       product_unit_price_text: "Unit Price"
       product_quantity_text: "Quantity"
   carts:
+    product_not_found: "Product not found!"
     empty_cart: "There are no product in your cart!"
+    not_enough_product: "Not enough products in inventory!"
+    update_button: "Update"
+    remove_button: "Remove"
     index:
       title: "Your Cart"
       header: "Your Cart"
       product_name_text: "Product Name"
+      unit_price_text: "Unit Price"
       quantity_text: "Quantity"
+      total_text: "Total"
+      continue_shopping_txt: "Continue Shopping"
+      checkout_txt: "Checkout"
+    update:
+      update_success: "Updated quantity!"
+      update_fail: "Can not update!"
+    destroy:
+      destroy_success: "Deleted product!"
+      destroy_fail: "Can not delete!"
   images:
     create:
       fail: "Failed uploading images"

@@ -33,6 +33,7 @@ module SessionsHelper
     session.delete :user_id
     @current_user = nil
     session.delete :cart
+    session.delete :cart_count
   end
 
   def remember user

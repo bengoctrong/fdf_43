@@ -1,9 +1,24 @@
-<tr>
-  <td><%= link_to product.name, product %></td>
-  <td><%= t("product_price", price: product.price) %></td>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td><%= button_to t("products.index.add_to_cart_button"),
-    carts_path(product_id: product.id), class: "btn btn-warning" %></td>
-</tr>
+<div class="col-sm-3">
+  <article class="col-item">
+    <div class="photo">
+      <%= image_tag "framgia.png", class: "img-responsive",
+        alt: t("products.alt_text") %>
+    </div>
+    <div class="info">
+      <div class="row">
+        <div class="price-details col-md-6">
+          <h1 class="h1-product-index"><%= link_to product.name, product %></h1>
+          <span class="price-new"><%= number_to_currency product.price %></span>
+        </div>
+      </div>
+      <div class="separator clear-left">
+        <p class="btn-add">
+          <%= button_to t("products.index.add_to_cart_button"),
+            carts_path(product_id: product.id), remote: true,
+              class: "btn btn-outline-danger" %>
+        </p>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </article>
+</div>
