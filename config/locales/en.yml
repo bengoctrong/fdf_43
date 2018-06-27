@@ -51,6 +51,8 @@ en:
   you_sure: "Are you sure?"
   edit: "Edit"
   delete: "Delete"
+  add_to_cart: "Add to cart"
+  edit: "Edit"
   static_pages:
     home:
       title: "Home"
@@ -108,19 +110,28 @@ en:
     products:
       create:
         success: "Product has been created!"
+      name_lb: "Product name"
+      description_lb: "Descripton"
+      price_lb: "Price"
+      quantity_lb: "Quantity"
+      type_lb: "Product type"
+      category_lb: "Category"
       new:
         title: "New Product"
         header: "New Product"
-        name_lb: "Product name"
-        description_lb: "Descripton"
-        price_lb: "Price"
-        quantity_lb: "Quantity"
-        type_lb: "Product type"
-        category_lb: "Category"
         submit: "Create product"
       destroy:
         success: "Product has been destroyed"
         warning: "Failed to destroy this product"
+      edit:
+        delete: "Delete product"
+        submit: "Update product"
+        info: "Product Infos"
+        image: "Product images"
+        add_image: "Add images"
+        add_submit: "Add"
+      update:
+        success: "Product has been updated!"
     users:
       destroy:
         success: "User has been destroyed"
@@ -134,6 +145,9 @@ en:
       product_name_text: "Product Name"
       product_unit_price_text: "Unit Price"
       add_to_cart_button: "Add to cart"
+    show:
+      inventory: "Inventory:"
+      price: "Current price:"
   product_price: "$%{price}"
   sessions:
     new:
@@ -214,4 +228,12 @@ en:
       header: "Your Cart"
       product_name_text: "Product Name"
       quantity_text: "Quantity"
-
+  images:
+    create:
+      fail: "Failed uploading images"
+    destroy:
+      fail: "Failed deleting image"
+  number:
+    currency:
+      format:
+        unit: "$"

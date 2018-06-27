@@ -48,7 +48,10 @@ module SessionsHelper
   end
 
   def can_delete? user
-    return false unless logged_in?
-    current_user.admin? && !current_user?(user)
+    logged_in? && current_user.admin? && !current_user?(user)
+  end
+
+  def can_edit?
+    logged_in? && current_user.admin?
   end
 end

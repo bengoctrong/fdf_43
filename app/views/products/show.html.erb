@@ -1,22 +1,31 @@
 <% provide :title, @product.name %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="product_info">
-      <h1>
-        <%= @product.name %>
-        <ul>
-          <li><%= @product.description %></li>
-          <li><%= t("product_price", price: @product.price) %></li>
-          <% if can_delete? current_user %>
-            <li>
-              <%= link_to t("delete"), admin_product_path(@product), method: :delete, data: {confirm: t("you_sure")} %>
-            </li>
-          <% end %>
-          <% @product.images.each do |image| %>
-            <%= image_tag image.url.to_s %>
-          <% end %>
-        </ul>
-      </h1>
-    </section>
-  </aside>
+<div class="container">
+  <div class="card">
+    <div class="container-fliud">
+      <div class="wrapper row">
+        <div class="preview col-md-6">
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active"><%= image_tag @product.images[0].url %></div>
+          </div>
+          <ul class="preview-thumbnail nav nav-tabs">
+            <% @product.images.each do |i| %>
+              <li><%= image_tag i.thumb.url %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="details col-md-6">
+          <h3 class="product-title"><%= @product.name %></h3>
+          <p class="product-description"><%= @product.description %></p>
+          <h4 class="price"><%= t ".inventory" %> <span><%= @product.quantity %></span></h4>
+          <h4 class="price"><%= t ".price" %> <span><%= number_to_currency @product.price %></span></h4>
+          <div class="pull-left">
+            <input name="quantity" type="number" class="form-control text-center" value="1" min="1">
+            <%= link_to t("add_to_cart"), "#", class: "add-to-cart btn btn-default" %>
+            <span> <%= link_to "Edit", edit_admin_product_path(@product), class: "edit-product btn btn-default" if can_edit? %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

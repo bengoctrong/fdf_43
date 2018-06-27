@@ -18,5 +18,6 @@ class Product < ApplicationRecord
   validates :quantity, presence: true, numericality: {only_integer: true}
   validates :product_type, presence: true
 
+  scope :actived, ->{where(is_delete: :exist)}
   mount_uploaders :images, ImageUploader
 end
