@@ -19,3 +19,5 @@ product:
   image:
     size: 400
     thumb_size: 200
+category:
+  list_size: 5

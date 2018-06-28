@@ -5,6 +5,7 @@ module Admin
 
     def new
       @product = Product.new
+      @categories = Category.all
     end
 
     def create

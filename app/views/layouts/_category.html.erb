@@ -1,0 +1,12 @@
+<li class= "dropdown-submenu">
+  <%= link_to products_path(category_id: category.id) do %>
+    <%= category.name %>
+    <ul class="dropdown-menu">
+      <% category.subcategories.each do |sub_category| %>
+        <li>
+          <%= link_to sub_category.name, products_path(category_id: sub_category.id) %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</li>

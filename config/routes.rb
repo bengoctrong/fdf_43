@@ -30,4 +30,6 @@ Rails.application.routes.draw do
     resources :products, except: %i(index show)
     resources :users, only: :destroy
   end
+
+  resources :categories
 end

@@ -53,6 +53,8 @@ en:
   delete: "Delete"
   add_to_cart: "Add to cart"
   edit: "Edit"
+  search: "Search"
+  category_header: "Categories"
   static_pages:
     home:
       title: "Home"
@@ -116,6 +118,7 @@ en:
       quantity_lb: "Quantity"
       type_lb: "Product type"
       category_lb: "Category"
+      image_lb: "Add images"
       new:
         title: "New Product"
         header: "New Product"
@@ -237,3 +240,10 @@ en:
     currency:
       format:
         unit: "$"
+  categories:
+    new:
+      title: "Category"
+      button_text: "Submit"
+      hello: "New category"
+      name: "Category name"
+      parent: "Parent Category"
