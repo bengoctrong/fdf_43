@@ -45,7 +45,7 @@ end
   Product.create!(name: name,
     description: description,
     price: price,
-    quantity: quantity,
+    inventory: quantity,
     category_id: 1)
 end
 

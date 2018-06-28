@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
+  root "products#index"
 
   get "/help", to: "static_pages#help"
   get "/about", to: "static_pages#about"
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :order_products
   resources :orders
-  resources :carts, only: %i(index create)
+  resources :carts, except: %i(new show edit)
 
   resources :products, only: %i(index show)
   resources :products do

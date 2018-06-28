@@ -155,6 +155,7 @@ input, textarea, select, .uneditable-input {
   margin-bottom: 15px;
   @include box_sizing;
 }
+
 input {
   height: auto !important;
 }
@@ -250,6 +251,7 @@ aside {
 .table-user-information > tbody > tr > td {
     border-top: 0;
 }
+
 .toppad {
   margin-top: 90px;
   margin-left: 180px;
@@ -295,7 +297,8 @@ h3.text-align-center {
       padding: 0px;
       margin: 0px; }
     &:last-of-type {
-      margin-right: 0px; }
+      margin-right: 0px;
+    }
   }
 }
 
@@ -322,7 +325,8 @@ h3.text-align-center {
   color: white;
   &:hover {
     background: $orange-dark;
-    color: white; }
+    color: white;
+  }
 }
 
 .edit-product {
@@ -334,7 +338,8 @@ h3.text-align-center {
   color: white;
   &:hover {
     background: $orange-dark;
-    color: white; }
+    color: white;
+  }
 }
 
 .product-title {
@@ -342,7 +347,8 @@ h3.text-align-center {
 
 .product-title, .price {
   text-transform: UPPERCASE;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .dropdown-submenu {
  position: relative;
@@ -383,4 +389,36 @@ h3.text-align-center {
 .select_box{
   height: 50px;
   overflow: scroll;
+  font-weight: bold;
+}
+
+.product-img {
+  width: 72px;
+  height: 72px;
+}
+
+.h1-product-index {
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+
+.media-body {
+  padding-top: 30px;
+  padding-left: 10px;
+}
+
+.btn-outline-danger {
+  border-color: red;
+  background-color: white;
+  box-sizing: border-box;
+  color: red;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}
+
+.btn-color {
+  background: $black-gray;
+  border-color: gray;
 }

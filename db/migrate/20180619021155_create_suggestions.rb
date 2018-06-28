@@ -2,10 +2,10 @@ class CreateSuggestions < ActiveRecord::Migration[5.1]
   def change
     create_table :suggestions do |t|
       t.string :name
-      t.string :description
+      t.text :description
       t.integer :price
-      t.string :type
-      t.string :status, default: "pending"
+      t.integer :type, default: 0
+      t.integer :status, default: 0
       t.references :user, foreign_key: true
 
       t.timestamps

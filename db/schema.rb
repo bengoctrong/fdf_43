@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 20180622074730) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.integer "parent_id", default: 1
+    t.integer "parent_id", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20180622074730) do
     t.string "name"
     t.string "description"
     t.float "price", limit: 24
-    t.integer "quantity"
+    t.integer "inventory"
     t.integer "product_type", default: 0
     t.float "avg_rate", limit: 24
     t.integer "count_rate"
@@ -70,10 +70,10 @@ ActiveRecord::Schema.define(version: 20180622074730) do
 
   create_table "suggestions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.integer "price"
-    t.string "type"
-    t.string "status", default: "pending"
+    t.integer "type", default: 0
+    t.integer "status", default: 0
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
