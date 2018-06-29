@@ -1,0 +1,45 @@
+<% provide :title, @suggestion.product_name %>
+<div class="container">
+  <div class="card">
+    <div class="container-fluid">
+      <div class="wrapper row">
+        <div class="preview col-md-5">
+          <div class="preview-pic tab-content">
+            <div class="tab-pane active" id="pic-1"><%= image_tag "framgia.png" %></div>
+            <div class="tab-pane" id="pic-2"><%= image_tag "framgia.png" %></div>
+            <div class="tab-pane" id="pic-3"><%= image_tag "framgia.png" %></div>
+            <div class="tab-pane" id="pic-4"><%= image_tag "framgia.png" %></div>
+            <div class="tab-pane" id="pic-5"><%= image_tag "framgia.png" %></div>
+          </div>
+          <ul class="preview-thumbnail nav nav-tabs">
+            <li><a data-target="#pic-1" data-toggle="tab"><%= image_tag "framgia.png" %></a></li>
+            <li><a data-target="#pic-2" data-toggle="tab"><%= image_tag "framgia.png" %></a></li>
+            <li><a data-target="#pic-3" data-toggle="tab"><%= image_tag "framgia.png" %></a></li>
+            <li><a data-target="#pic-4" data-toggle="tab"><%= image_tag "framgia.png" %></a></li>
+            <li><a data-target="#pic-5" data-toggle="tab"><%= image_tag "framgia.png" %></a></li>
+          </ul>
+        </div>
+        <div class="details-suggestion col-md-6">
+          <h3 class="product-title">
+            <%= @suggestion.product_name %>
+          </h3>
+          <h4 class="product-description">
+            <%= @suggestion.description %>
+          </h4>
+          <h4 class="price"><%= t ".proposed_price_lb" %>
+            <span>
+              <%= number_to_currency @suggestion.price %>
+            </span>
+          </h4>
+          <div class="action">
+            <%= link_to t(".accept_button"),
+              new_admin_product_path(suggestion_id: @suggestion.id),
+              class: "edit-product btn btn-outline-danger"%>
+            <%= link_to t(".reject_button"), suggestion_path(@suggestion),
+              method: :patch, class: "edit-product btn btn-outline-danger" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

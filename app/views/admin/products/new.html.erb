@@ -5,6 +5,8 @@
     <%= form_for @product, url: admin_products_path do |f| %>
       <%= render "shared/error_messages", object: f.object %>
 
+      <%= f.hidden_field :suggestion_id, value: params[:suggestion_id] %>
+
       <%= f.label :name, t("admin.products.name_lb") %>
       <%= f.text_field :name, class: "form-control" %>
 
@@ -14,15 +16,15 @@
       <%= f.label :price, t("admin.products.price_lb") %>
       <%= f.number_field :price, class: "form-control" %>
 
-      <%= f.label :quantity, t("admin.products.quantity_lb") %>
-      <%= f.number_field :quantity, class: "form-control" %>
+      <%= f.label :inventory, t("admin.products.quantity_lb") %>
+      <%= f.number_field :inventory, class: "form-control" %>
 
       <%= f.label :product_type, t("admin.products.type_lb") %>
-      <%= f.select :category_id, "<option>food</option><option>drink</option>".html_safe %>
+      <%= f.select :product_type, choose_product_type %>
 
       <%= f.label :category_id, t("admin.products.category_lb") %>
-      <%= f.select :category_id,
-        options_for_select(@categories.collect{|u| [u.name, u.id]}), {}, {size: Settings.category.list_size} %>
+      <%= f.select :category_id, choose_category_id,
+        {}, {size: Settings.category.list_size} %>
 
       <%= f.label :images, t("admin.products.image_lb") %>
       <%= f.file_field :images, multiple: true %>
