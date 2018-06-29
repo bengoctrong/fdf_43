@@ -69,11 +69,11 @@ ActiveRecord::Schema.define(version: 20180622074730) do
   end
 
   create_table "suggestions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "name"
+    t.string "product_name"
     t.text "description"
-    t.integer "price"
-    t.integer "type", default: 0
-    t.integer "status", default: 0
+    t.float "price", limit: 24
+    t.integer "product_type", default: 0, null: false
+    t.integer "status", default: 0, null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
