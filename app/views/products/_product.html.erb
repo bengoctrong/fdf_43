@@ -1,13 +1,14 @@
 <div class="col-sm-3">
   <article class="col-item">
     <div class="photo">
-      <%= image_tag "framgia.png", class: "img-responsive",
-        alt: t("products.alt_text") %>
+      <%= image_tag "framgia.png", class: "img-responsive", alt: t("products.alt_text") %>
     </div>
     <div class="info">
       <div class="row">
         <div class="price-details col-md-6">
-          <h1 class="h1-product-index"><%= link_to product.name, product %></h1>
+          <h1 class="h1-product-name">
+            <%= link_to product.name, product, class: "product-name" %>
+          </h1>
           <span class="price-new"><%= number_to_currency product.price %></span>
         </div>
       </div>
@@ -15,7 +16,7 @@
         <p class="btn-add">
           <%= button_to t("products.index.add_to_cart_button"),
             carts_path(product_id: product.id), remote: true,
-              class: "btn btn-outline-danger" %>
+            class: "add-product btn btn-outline-danger" %>
         </p>
       </div>
       <div class="clearfix"></div>

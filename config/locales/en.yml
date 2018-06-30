@@ -271,3 +271,28 @@ en:
       hello: "New category"
       name: "Category name"
       parent: "Parent Category"
+  suggestions:
+    create_success: "Yours suggestion has been sent. Thank you!"
+    reject_success: "Suggestion has been rejected!"
+    destroy_success: "Suggestion has been deleted!"
+    destroy_fails: "Need Accept or Reject before delete!"
+    not_found_suggestion: "Suggestion not found!"
+    details_link: "Details"
+    delete_link: "Delete"
+    product_name_lb: "Product Name"
+    description_lb: "Descripton"
+    price_lb: "Price"
+    product_type_lb: "Product Type (Food or Drink?)"
+    show:
+      description_lb: "Descripton: "
+      proposed_price_lb: "Proposed Price:"
+      accept_button: "Accept"
+      reject_button: "Reject"
+    new:
+      title: "Suggest Product"
+      header: "Your Suggestion"
+      button_text: "Send email"
+    index:
+      user_name_text: "User Name"
+      product_name_text: "Product Name"
+      status_text: "Status"

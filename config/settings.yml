@@ -3,8 +3,11 @@ minimum_value: 1
 per_page_value: 10
 increase_quantity: 1
 minimum_inventory: 0
+default_inventory: 10
+default_category: 1
 zero_value: 0
 cart_value: 0
+one_value: 1
 total: 0
 time_expire: 2
 user:
@@ -26,3 +29,12 @@ product:
     thumb_size: 200
 category:
   list_size: 5
+suggestion:
+  name:
+    maximum: 100
+  description:
+    maximum: 500
+food: "food"
+drink: "drink"
+rows: 10
+

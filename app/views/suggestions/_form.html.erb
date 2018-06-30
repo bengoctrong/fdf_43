@@ -1,0 +1,17 @@
+<%= form_for @suggestion do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :product_name, t("suggestions.product_name_lb") %>
+  <%= f.text_field :product_name, class: "form-control" %>
+
+  <%= f.label :description, t("suggestions.description_lb") %>
+  <%= f.text_area :description, rows: Settings.rows, class: "form-control" %>
+
+  <%= f.label :price, t("suggestions.price_lb") %>
+  <%= f.number_field :price, min: Settings.zero_value, class: "form-control" %>
+
+  <%= f.label :product_type, t("suggestions.product_type_lb") %>
+  <%= f.text_field :product_type, class: "form-control" %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-outline-danger" %>
+<% end %>

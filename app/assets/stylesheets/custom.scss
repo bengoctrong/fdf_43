@@ -317,9 +317,9 @@ h3.text-align-center {
 }
 
 .add-to-cart {
-  background: $orange-light;
+  background: $gray-border;
   padding: 12px 15px;
-  border: none;
+  border-color: red;
   text-transform: UPPERCASE;
   font-weight: bold;
   color: white;
@@ -330,9 +330,9 @@ h3.text-align-center {
 }
 
 .edit-product {
-  background: #bbb;
+  background: $gray-border;
   padding: 12px 15px;
-  border: none;
+  border-color: red;
   text-transform: UPPERCASE;
   font-weight: bold;
   color: white;
@@ -342,11 +342,20 @@ h3.text-align-center {
   }
 }
 
-.product-title {
-  margin-top: 0px; }
+.add-product {
+  background: $gray-border;
+  padding: 12px 15px;
+  border-color: red;
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: white;
+  &:hover {
+    background: $orange-dark;
+    color: white;
+  }
+}
 
 .product-title, .price {
-  text-transform: UPPERCASE;
   font-weight: bold;
 }
 
@@ -397,9 +406,18 @@ h3.text-align-center {
   height: 72px;
 }
 
-.h1-product-index {
+.h1-product-name {
   letter-spacing: 0.5px;
   font-weight: bold;
+  font-color: black;
+}
+
+.product-name {
+  color: black;
+  font-color: black;
+  &:hover{
+    color: black;
+  }
 }
 
 .media-body {
@@ -421,4 +439,9 @@ h3.text-align-center {
 .btn-color {
   background: $black-gray;
   border-color: gray;
+}
+
+.status-color {
+  color: red;
+  font-weight: bold;
 }
