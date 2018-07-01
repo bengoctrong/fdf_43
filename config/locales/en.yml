@@ -139,6 +139,20 @@ en:
       destroy:
         success: "User has been destroyed"
         warning: "Failed to destroy this user"
+    orders:
+      order:
+        accept: "Accept"
+        reject: "Reject"
+        details_link: "Details"
+      index:
+        title: "All Orders"
+        header: "All Orders"
+        order_id : "Order ID"
+        user_name_text: "Customer"
+        user_email_text: "Email"
+        status: "Status"
+        all: "All"
+        filter: "Filter"
   products:
     alt-text: Product Image"
     product_not_found: "Product not found!"
@@ -220,20 +234,29 @@ en:
     add_product_fail: "Can not add product!"
   orders:
     not_found_order_msg: "Order not found!"
-    index:
-      title: "All Carts"
-      header: "All Carts"
-      user_name_text: "Customer"
-      user_email_text: "Email"
-      user_address_text: "Address"
-      details_link: "Details"
+    new_order:
+      name: "Name"
+      address: "Ship Address"
+      note: "Note"
+    new:
+      title: "New Order"
+      header: "CHECKOUT"
+      button_text: "Create"
+    create:
+      success: "Order has been created"
+      danger: "Can't create new order"
     show:
       title: "Your Cart"
       header: "Your Cart"
+      created: "Created at:"
+      status: "Status:"
+      updated: "Updated at:"
       product_id_text: "Product ID"
       product_name_text: "Product Name"
       product_unit_price_text: "Unit Price"
       product_quantity_text: "Quantity"
+      product_total_text: "Total"
+      total_price: "Total price:"
   carts:
     product_not_found: "Product not found!"
     empty_cart: "There are no product in your cart!"

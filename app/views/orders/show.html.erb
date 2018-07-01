@@ -1,25 +1,35 @@
 <%= provide :title, t(".title") %>
-<h2><%= t ".title" %></h2>
+<h1><%= t ".header" %></h1>
+<h4>
+  <%= t ".created" %>
+  <strong><%= l @order.created_at, format: :long %></strong>
+</h4>
+<h4>
+  <%= t ".status" %>
+  <strong><%= @order.status %></strong>
+</h4>
+<h4>
+  <%= t ".updated" %>
+  <strong><%= l @order.updated_at, format: :long %></strong>
+</h4>
 <div class="well">
   <table class="table">
     <thead>
       <tr>
-        <th><%= t "orders.show.product_id_text" %></th>
-        <th><%= t "orders.show.product_name_text" %></th>
-        <th><%= t "orders.show.product_unit_price_text" %></th>
-        <th><%= t "orders.show.product_quantity_text" %></th>
-        <th></th>
+        <th class="text-center"><%= t ".product_name_text" %></th>
+        <th class="text-center"><%= t ".product_quantity_text" %></th>
+        <th class="text-center"><%= t ".product_unit_price_text" %></th>
+        <th class="text-center"><%= t ".product_total_text" %></th>
       </tr>
     </thead>
     <tbody>
-      <% @order.order_products.each do |order_product| %>
-        <tr>
-          <td><%= order_product.id %></td>
-          <td><%= link_to order_product.name, product_path %></td>
-          <td><%= t("product_price", price: order_product.price) %></td>
-          <td><%= order_product.quantity %></td>
-        </tr>
-      <% end %>
+      <%= render partial: "item", collection: @order.order_products %>
+      <tr>
+        <td><h3><%= t ".total_price" %></h3></td>
+        <td></td>
+        <td></td>
+        <td class="text-right"><h3><strong><%= number_to_currency @order.total_price %></strong></h3></td>
+      </tr>
     </tbody>
   </table>
 </div>

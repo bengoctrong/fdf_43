@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def choose_product_type
-    options_for_select([Settings.food,Settings.drink],Settings.food)
+    options_for_select([Settings.food, Settings.drink], Settings.food)
   end
 
   def choose_category_id

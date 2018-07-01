@@ -1,0 +1,32 @@
+<%= provide :title, t(".title") %>
+<h1><%= t ".header" %></h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel">
+      <%= form_tag admin_orders_path, method: :get, class:"panel-body form-group" do %>
+        <%= select_tag :status, options_for_select(@orders.statuses), {include_blank: t(".all"), class: "form-input"} %>
+
+        <%= submit_tag t(".filter"), class:"btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="well">
+  <table class="table">
+    <thead>
+      <tr>
+        <th><%= t ".order_id" %></th>
+        <th><%= t ".user_name_text" %></th>
+        <th><%= t ".user_email_text" %></th>
+        <th><%= t ".status" %></th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @orders %>
+    </tbody>
+  </table>
+  <%= will_paginate @orders %>
+</div>

@@ -38,4 +38,11 @@ class ApplicationController < ActionController::Base
   def load_category
     @categories = Category.basic_category
   end
+
+  def load_order
+    @order = Order.find_by id: params[:id]
+    return if @order
+    flash[:warning] = t "orders.not_found_order_msg"
+    redirect_to root_path
+  end
 end

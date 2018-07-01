@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create"
 
   resources :order_products
-  resources :orders
+  resources :orders, except: %i(index edit update)
   resources :carts, except: %i(new show edit)
   resources :suggestions
 
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products, except: %i(index show)
     resources :users, only: :destroy
+    resources :orders, only: %i(index edit update)
   end
 
   resources :categories

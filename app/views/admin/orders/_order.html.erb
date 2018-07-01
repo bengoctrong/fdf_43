@@ -1,0 +1,17 @@
+<tr>
+  <td><%= order.id %></td>
+  <td><%= order.name %></td>
+  <td><%= order.email %></td>
+  <td><%= order.status %></td>
+  <td><%= link_to t(".details_link"), order %></td>
+  <%= form_for order, url: admin_order_path(order),
+    data: { confirm: "You sure?"} do |f| %>
+    <%= f.hidden_field :status, value: 2 %>
+    <td>
+      <%= f.submit t(".accept"), class: "btn btn-success", onclick: Settings.order.submit.accept.to_s %>
+    </td>
+    <td>
+      <%= f.submit t(".reject"), class: "btn btn-large btn-danger", onclick: Settings.order.submit.reject.to_s %>
+    </td>
+  <% end %>
+</tr>

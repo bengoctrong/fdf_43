@@ -1,0 +1,17 @@
+<tr>
+  <td class="col-md-6">
+    <div class="media">
+      <a class="thumbnail pull-left" href="#">
+        <%= image_tag "framgia.png", class: "media-object product-img" %>
+      </a>
+      <div class="media-body">
+        <h4 class="media-heading">
+          <%= link_to item.name, product_path(item), class: "product-name" %>
+        </h4>
+      </div>
+    </div>
+  </td>
+  <td class="col-md-1 text-center"><strong><%= item.quantity %></strong></td>
+  <td class="col-md-1 text-center"><strong><%= number_to_currency item.price %></strong></td>
+  <td class="col-md-1 text-center"><strong><%= number_to_currency item.total %></strong></td>
+</tr>

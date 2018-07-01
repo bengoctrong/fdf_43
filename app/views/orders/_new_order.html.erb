@@ -1,0 +1,19 @@
+<%= form_for @order do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <%= f.label :name, t(".name") %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :address_ship, t(".address") %>
+  <%= f.text_field :address_ship, value: @order.address ,class: "form-control" %>
+
+  <%= f.label :note, t(".note") %>
+  <%= f.text_area :note, class: "form-control" %>
+
+  <%= f.fields_for :order_products do |of| %>
+    <%= of.hidden_field :product_id %>
+    <%= of.hidden_field :quantity %>
+    <%= of.hidden_field :total %>
+  <% end %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-success" %>
+<% end %>
