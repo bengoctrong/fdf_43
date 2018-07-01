@@ -55,6 +55,7 @@ en:
   edit: "Edit"
   search: "Search"
   category_header: "Categories"
+  list_orders: "Orders"
   static_pages:
     home:
       title: "Home"
@@ -141,8 +142,6 @@ en:
         warning: "Failed to destroy this user"
     orders:
       order:
-        accept: "Accept"
-        reject: "Reject"
         details_link: "Details"
       index:
         title: "All Orders"
@@ -245,12 +244,15 @@ en:
     create:
       success: "Order has been created"
       danger: "Can't create new order"
-    show:
-      title: "Your Cart"
-      header: "Your Cart"
+    order_info:
       created: "Created at:"
       status: "Status:"
       updated: "Updated at:"
+      accept: "Accept"
+      reject: "Reject"
+    show:
+      title: "Your Cart"
+      header: "Your Cart"
       product_id_text: "Product ID"
       product_name_text: "Product Name"
       product_unit_price_text: "Unit Price"

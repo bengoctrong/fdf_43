@@ -1,6 +1,7 @@
 module Admin
   class OrdersController < ApplicationController
     before_action :load_order, except: :index
+    before_action :logged_in_user, :login_as_admin
 
     def index
       @orders = Order.newest.paginate(page: params[:page],
@@ -9,9 +10,12 @@ module Admin
     end
 
     def update
-      accept_order if params[:order][:status] == Settings.order.status.accepted
-      reject_order if params[:order][:status] == Settings.order.status.rejected
-      redirect_to admin_orders_path
+      accept_order if params[:status] == Settings.order.status.accepted
+      reject_order if params[:status] == Settings.order.status.rejected
+      respond_to do |format|
+        format.html{}
+        format.js{}
+      end
     end
 
     private

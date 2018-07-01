@@ -25,8 +25,8 @@ class SessionsController < ApplicationController
   def check_login_user
     if @user.activated?
       log_in @user
-      params[:session][:remember_me] == Settings.check_box ? remember(@user) : forget(@user)
-      redirect_back_or root_path
+      params[:session][:remember_me] == Settings.remember_me ? remember(@user) : forget(@user)
+      redirect_back_or @user
     else
       flash[:warning] = t ".warning_msg"
       redirect_to root_path

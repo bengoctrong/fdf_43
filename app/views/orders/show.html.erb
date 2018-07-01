@@ -1,17 +1,8 @@
 <%= provide :title, t(".title") %>
 <h1><%= t ".header" %></h1>
-<h4>
-  <%= t ".created" %>
-  <strong><%= l @order.created_at, format: :long %></strong>
-</h4>
-<h4>
-  <%= t ".status" %>
-  <strong><%= @order.status %></strong>
-</h4>
-<h4>
-  <%= t ".updated" %>
-  <strong><%= l @order.updated_at, format: :long %></strong>
-</h4>
+<div class="current-order">
+  <%= render "order_info" %>
+</div>
 <div class="well">
   <table class="table">
     <thead>
@@ -32,4 +23,5 @@
       </tr>
     </tbody>
   </table>
+</div>
 </div>

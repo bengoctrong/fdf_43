@@ -24,6 +24,7 @@
       <% end %>
       </div>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("list_orders"), admin_orders_path %></li>
         <li><%= link_to t("home_link"), root_path %></li>
         <li><%= link_to t("help_link"), help_path %></li>
         <% if logged_in? %>
